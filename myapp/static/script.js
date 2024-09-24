@@ -1,4 +1,4 @@
-document.querySelector('.add-new').addEventListener('click', function(event) {
+document.querySelector('.add-new-inline').addEventListener('click', function(event) {
     event.preventDefault();
     
     const name = prompt("Enter product name:");
@@ -24,7 +24,6 @@ document.querySelector('.add-new').addEventListener('click', function(event) {
     }
 });
 
-
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('delete')) {
         event.preventDefault();
@@ -35,7 +34,6 @@ document.addEventListener('click', function(event) {
         }
     }
 });
-
 
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('edit')) {
@@ -56,7 +54,6 @@ document.addEventListener('click', function(event) {
         }
     }
 });
-
 
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('details')) {
