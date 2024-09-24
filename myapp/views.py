@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product
 from .forms import ProductForm
 
-# Create product
+
 def create_product(request):
     if request.method == "POST":
         form = ProductForm(request.POST)
@@ -13,12 +13,12 @@ def create_product(request):
         form = ProductForm()
     return render(request, 'product_form.html', {'form': form})
 
-# List products (Read view)
+
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'product_list.html', {'products': products})  # Use a dedicated template
 
-# Update product
+
 def update_product(request, pk):
     product = get_object_or_404(Product, pk=pk)
     if request.method == "POST":
@@ -30,7 +30,6 @@ def update_product(request, pk):
         form = ProductForm(instance=product)
     return render(request, 'product_form.html', {'form': form})
 
-# Delete product
 def delete_product(request, pk):
     product = get_object_or_404(Product, pk=pk)
     if request.method == "POST":
